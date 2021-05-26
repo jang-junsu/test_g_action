@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo $GITHUB_REF
+        echo ${{github.event.issue.number}}
+#        echo $GITHUB_REF
 
 #   slackNotification:
 #     name: Slack Notification
