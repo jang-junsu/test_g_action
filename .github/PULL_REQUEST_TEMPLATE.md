@@ -12,10 +12,6 @@ https://jira.raksul.net/browse/SCM-XXXX
 ## TODO
 やり残していることがあれば書く
 
-## リリース手順
-* [ ] masterへマージ
-* [ ] raksul-protoのマージ https://github.com/raksul/raksul-proto/pull/xxx
-* [ ] deployコマンドを実行 `@rbot j build raksul-prod-printing-deploy`
 
 ## テスト
 * [ ] ここに実施したテストを書く
