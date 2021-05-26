@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "::set-env name=PR_NUMBER::$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"
-        echo $PR_NUMBER
+        echo $GITHUB_REF
+
 #   slackNotification:
 #     name: Slack Notification
 #     runs-on: ubuntu-latest
