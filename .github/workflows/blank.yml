@@ -13,7 +13,9 @@ jobs:
     steps:
     - run: |
         echo $(curl -H "Accept: application/vnd.github.groot-preview+json" https://api.github.com/repos/jang-junsu/test_g_action/commits/${{ github.sha }}/pulls | jq -r '.[].number')
-        echo ${{github.event.issue.number}} &&  echo $GITHUB_REF
+        echo ${{github.event.issue.number}}
+        echo $GITHUB_REF
+        echo ${{github.sha}}
 
 #   slackNotification:
 #     name: Slack Notification
