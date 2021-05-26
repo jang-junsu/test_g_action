@@ -16,6 +16,7 @@ jobs:
         echo ${{github.event.issue.number}}
         echo $GITHUB_REF
         echo ${{github.sha}}
+        echo $GITHUB_SHA
 
 #   slackNotification:
 #     name: Slack Notification
