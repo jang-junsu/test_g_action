@@ -6,7 +6,7 @@ name: Slack Notification Demo
 jobs:
   getPr:
     name: get Pr
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
     - run: |
         echo "::set-env name=PR_NUMBER::$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"
