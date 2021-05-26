@@ -4,13 +4,20 @@ on:
       - main
 name: Slack Notification Demo
 jobs:
+  getPr:
+    name: get Pr
+    runs-on: ubunto-latest
+    steps:
+    - run: |
+        echo "::set-env name=PR_NUMBER::$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"
+        echo "${{ github.sha }}"
   slackNotification:
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Slack Notification
-    - uses: rtCamp/action-slack-notify@v2
+      uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_COLOR: ${{ job.status }}
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -18,5 +25,4 @@ jobs:
         SLACK_TITLE: ${{ github.sha }}
         SLACK_ICON_EMOJI: ':junsu:'
         SLACK_USERNAME: 'Master Notifier'
-    - run: |
-        echo "::set-env name=PR_NUMBER::$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"
+
